@@ -1,6 +1,7 @@
 #include <iostream>
 #include <map>
 #include <string>
+
 using namespace std;
 
 int main() {
@@ -26,12 +27,18 @@ int main() {
     char most = 'a';
     int max_count = 0;
 
-    for (auto [vowel, count] : vowel_counts) {
+    for (const auto& [vowel, count] : vowel_counts) {
         if (count > max_count) {
             max_count = count;
             most = vowel;
         }
     }
+
+    cout << "The most prominent vowel in your word was: '" 
+         << most << "', appearing " << max_count << " times." << endl;
+
+    return 0;
+}
 
     cout << "The most prominent vowel in your word was: '" 
          << most << "', appearing " << max_count << " times." << endl;
